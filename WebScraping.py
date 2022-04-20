@@ -99,6 +99,7 @@ for url in urls:
         data.append(element)
 
 
+# conectare cu baza de date si introducerea inregistrariilor
 conn = sqlite3.connect('identifier.sqlite')
 c = conn.cursor()
 c.executemany('INSERT INTO datas VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);', data)
