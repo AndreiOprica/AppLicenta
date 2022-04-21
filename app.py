@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import sqlite3
+import sys
 
 app = Flask(__name__)
 
@@ -95,8 +96,6 @@ def hello_world():
             c19.append(row[18])
 
     # calculate score and add it to lists
-    bows = []
-
     for i in range(len(c13)):
         bowCategory = c13[i].split(" ")
         bowDescription = c15[i].split(" ")
@@ -121,6 +120,33 @@ def hello_world():
         tfidfBowDescription = computeTFIDF(tfBowDescription, idfs)
 
         c20.append((tfidfBowCategory + tfidfBowDescription))
+
+    for i in range(len(c20)):
+        max_score = i
+        for j in range(i+1, len(c20)):
+            if c20[max_score] < c20[j]:
+                max_score = j
+
+        c20[i], c20[max_score] = c20[max_score], c20[i]
+        c1[i], c1[max_score] = c1[max_score], c1[i]
+        c2[i], c2[max_score] = c2[max_score], c2[i]
+        c3[i], c3[max_score] = c3[max_score], c3[i]
+        c4[i], c4[max_score] = c4[max_score], c4[i]
+        c5[i], c5[max_score] = c5[max_score], c5[i]
+        c6[i], c6[max_score] = c6[max_score], c6[i]
+        c7[i], c7[max_score] = c7[max_score], c7[i]
+        c8[i], c8[max_score] = c8[max_score], c8[i]
+        c9[i], c9[max_score] = c9[max_score], c9[i]
+        c10[i], c10[max_score] = c10[max_score], c10[i]
+        c11[i], c11[max_score] = c11[max_score], c11[i]
+        c12[i], c12[max_score] = c12[max_score], c12[i]
+        c13[i], c13[max_score] = c13[max_score], c13[i]
+        c14[i], c14[max_score] = c14[max_score], c14[i]
+        c15[i], c15[max_score] = c15[max_score], c15[i]
+        c16[i], c16[max_score] = c16[max_score], c16[i]
+        c17[i], c17[max_score] = c17[max_score], c17[i]
+        c18[i], c18[max_score] = c18[max_score], c18[i]
+        c19[i], c19[max_score] = c19[max_score], c19[i]
 
     # put data in a dictionary and return data to a template
     output = {
