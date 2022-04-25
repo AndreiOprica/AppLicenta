@@ -74,7 +74,7 @@ def hello_world():
     c20 = []
 
     for row in cur:
-        if (row[1][0] == 'L' and row[1][1] == 'i' and row[1][2] == 'n' and row[1][3] == 'k' and row[1][4] == ':'):
+        if (row[1][0] == 'L' and row[1][1] == 'i' and row[1][2] == 'n' and row[1][3] == 'k' and row[1][4] == ':' and row[1] != 'Link: http://www.cceai.org/' and row[1] != 'Link: https://coinsconf.com/' and row[1] != 'Link: https://www.mlforhc.org/' and row[9] != 'Call For Papers'):
             c1.append(row[0])
             c2.append(row[1])
             c3.append(row[2])
@@ -167,9 +167,9 @@ def hello_world():
         '15': c15,
         '16': c16,
         '17': c17,
-        '18': c18,
-        '19': c19,
-        '20': c20
+        #'18': c18,
+        #'19': c19,
+        #'20': c20
     }
 
     return render_template('index.html', output=output.items())
