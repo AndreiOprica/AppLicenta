@@ -148,6 +148,24 @@ def hello_world():
         c18[i], c18[max_score] = c18[max_score], c18[i]
         c19[i], c19[max_score] = c19[max_score], c19[i]
 
+    for i in range(len(c20)):
+        if c15[i] == '':
+            del c1[i]
+            del c2[i]
+            del c3[i]
+            del c4[i]
+            del c5[i]
+            del c6[i]
+            del c7[i]
+            del c8[i]
+            del c9[i]
+            del c10[i]
+            del c11[i]
+            del c12[i]
+            del c13[i]
+            del c14[i]
+            del c15[i]
+
     # put data in a dictionary and return data to a template
     output = {
         '1': c1,
@@ -165,8 +183,8 @@ def hello_world():
         '13': c13,
         '14': c14,
         '15': c15,
-        '16': c16,
-        '17': c17,
+        #'16': c16,
+        #'17': c17,
         #'18': c18,
         #'19': c19,
         #'20': c20
