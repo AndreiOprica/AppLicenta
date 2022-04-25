@@ -67,10 +67,6 @@ def hello_world():
     c13 = []
     c14 = []
     c15 = []
-    c16 = []
-    c17 = []
-    c18 = []
-    c19 = []
     c20 = []
 
     for row in cur:
@@ -90,10 +86,6 @@ def hello_world():
             c13.append(row[12])
             c14.append(row[13])
             c15.append(row[14])
-            c16.append(row[15])
-            c17.append(row[16])
-            c18.append(row[17])
-            c19.append(row[18])
 
     # calculate score and add it to lists
     for i in range(len(c13)):
@@ -143,10 +135,6 @@ def hello_world():
         c13[i], c13[max_score] = c13[max_score], c13[i]
         c14[i], c14[max_score] = c14[max_score], c14[i]
         c15[i], c15[max_score] = c15[max_score], c15[i]
-        c16[i], c16[max_score] = c16[max_score], c16[i]
-        c17[i], c17[max_score] = c17[max_score], c17[i]
-        c18[i], c18[max_score] = c18[max_score], c18[i]
-        c19[i], c19[max_score] = c19[max_score], c19[i]
 
     for i in range(len(c20)):
         if c15[i] == '':
@@ -183,11 +171,7 @@ def hello_world():
         '13': c13,
         '14': c14,
         '15': c15,
-        #'16': c16,
-        #'17': c17,
-        #'18': c18,
-        #'19': c19,
-        #'20': c20
+        '20': c20
     }
 
     return render_template('index.html', output=output.items())
