@@ -1,3 +1,5 @@
+import copy
+
 from flask import Flask, render_template
 import sqlite3
 import sys
@@ -155,26 +157,29 @@ def hello_world():
             del c15[i]
 
     # put data in a dictionary and return data to a template
-    output = {
-        '1': c1,
-        '2': c2,
-        '3': c3,
-        '4': c4,
-        '5': c5,
-        '6': c6,
-        '7': c7,
-        '8': c8,
-        '9': c9,
-        '10': c10,
-        '11': c11,
-        '12': c12,
-        '13': c13,
-        '14': c14,
-        '15': c15,
-        '20': c20
-    }
 
-    return render_template('index.html', output=output.items())
+    output1 = {}
+
+    for i in range(len(c1)):
+        lst = []
+        lst.append(c1[i])
+        lst.append(c2[i])
+        lst.append(c3[i])
+        lst.append(c4[i])
+        lst.append(c5[i])
+        lst.append(c6[i])
+        lst.append(c7[i])
+        lst.append(c8[i])
+        lst.append(c9[i])
+        lst.append(c10[i])
+        lst.append(c11[i])
+        lst.append(c12[i])
+        lst.append(c13[i])
+        lst.append(c15[i])
+        lst.append(c20[i])
+        output1[i] = copy.copy(lst)
+
+    return render_template('index.html', output=output1.items())
 
 
 if __name__ == '__main__':
