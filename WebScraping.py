@@ -63,10 +63,22 @@ urls = [
 #    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=7',
 #    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=8',
 #    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=9',
-#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=10',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=10'
 #    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=11',
 #    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=12',
 #    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=13',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=14',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=15',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=16',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=17',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=18',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=19',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=20'
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=21',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=22',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=23',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=24',
+#    'http://www.wikicfp.com/cfp/call?conference=computer%20science&page=25'
 
     # linkuri spre categoria de machine learning
 #    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=1',
@@ -78,10 +90,22 @@ urls = [
 #    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=7',
 #    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=8',
 #    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=9',
-#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=10',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=10'
 #    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=11',
 #    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=12',
 #    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=13',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=14',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=15',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=16',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=17',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=18',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=19',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=20'
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=21',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=22',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=23',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=24',
+#    'http://www.wikicfp.com/cfp/call?conference=machine%20learning&page=25'
 ]
 
 data = []
@@ -102,7 +126,7 @@ for url in urls:
 # conectare cu baza de date si introducerea inregistrariilor
 conn = sqlite3.connect('identifier.sqlite')
 c = conn.cursor()
-c.executemany('INSERT INTO datas VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);', data)
+c.executemany('INSERT INTO MachineLearning VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);', data)
 conn.commit()
 conn.close()
 
