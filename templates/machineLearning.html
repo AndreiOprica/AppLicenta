@@ -4,28 +4,20 @@
     <style>
         body {
             width: 98%;
-            margin: 0px auto;
+            margin: auto;
             padding: 0;
             overflow-y: scroll;
             font-size: 20px;
-            background-image:url("https://image.winudf.com/v2/image/Y29tLlN1cGVyVUEuYXBwMDA0Nl9zY3JlZW5zaG90c183Xzc0MGYwMWUy/screen-7.jpg?fakeurl=1&type=.jpg");
+            background-image:url("https://wallpaper.dog/large/10717699.jpg");
             background-repeat: no-repeat;
             font-family:Arial, Helvetica, sans-serif;
-        }
-
-        #tabelprint  {
-            margin-left: 10px;
-            border-collapse: collapse;
         }
 
         #tabelprint td {
             background-color: #d6d0ce ;
             border: 3px solid black;
             font-family: 'Times New Roman', Times, serif;
-        }
-
-        #tabelprint tr{
-            text-align: left;
+            width: auto;
         }
 
         table, th, td {
@@ -34,41 +26,18 @@
 
         table {
             width: 100%;
-            max-width: 1750px;
-            height: 850px;
+            max-width: 1550px;
+            height: 750px;
             margin: 0 auto;
             display: block;
             overflow-x: auto;
             border-spacing: 0;
         }
 
-        tbody {
-            white-space: nowrap;
-        }
-
-        th, td {
-            padding: 50px 10px;
-            border-top-width: 0;
-            border-left-width: 0;
-        }
-
-        th {
-            position: sticky;
-            top: 0;
-            background: #fff;
-            vertical-align: bottom;
-        }
-
-        th:last-child, td:last-child {
-            border-right-width: 0;
-        }
-
-        tr:last-child td {
-            border-bottom-width: 0;
-        }
         .topnav {
             overflow: hidden;
-            background-color: #333;
+            background-color: #0d5396;
+            border-radius: 25px;
         }
 
         .topnav a {
@@ -86,8 +55,12 @@
         }
 
         .topnav a.active {
-            background-color: #08708f;
+            background-color: #40b290;
             color: white;
+        }
+
+        td {
+            text-align: center;
         }
     </style>
     <meta charset="UTF-8">
@@ -95,17 +68,34 @@
 </head>
 <body>
     <div class="topnav">
-        <a href="/">Home Page</a>
-        <a href="/ComputerScience">Computer Science Conferences and Journals</a>
-        <a class="active" href="/MachineLearning">Machine Learning Conferences and Journals</a>
+        <a href="http://127.0.0.1:5000/">Home Page</a>
+        <a href="http://127.0.0.1:5000/ComputerScience">Computer Science Conferences and Journals</a>
+        <a class="active" href="http://127.0.0.1:5000/MachineLearning">Machine Learning Conferences and Journals</a>
     </div>
+    <br>
+    <br>
     <br>
     <div id="tabelprint">
         <table>
+            <thead>
+            <tr>
+                <td style="background-color: #0a7a40; text-align: center;"><b>no.</b></td>
+                <td style="background-color: #0a7a40; text-align: center;"><b>TITLE</b></td>
+                <td style="background-color: #0a7a40; text-align: center;"><b>CATEGORIES</b></td>
+                <td style="background-color: #0a7a40; text-align: center;"><b>ABSTRACT</b></td>
+                <td style="background-color: #0a7a40; text-align: center;"><b>LINK</b></td>
+                <td style="background-color: #0a7a40; text-align: center;"><b>WHEN</b></td>
+                <td style="background-color: #0a7a40; text-align: center;"><b>WHERE</b></td>
+                <td style="background-color: #0a7a40; text-align: center;"><b>SUBMISSION DEADLINE</b></td>
+                <td style="background-color: #0a7a40; text-align: center;"><b>NOTIFICATION DUE</b></td>
+                <td style="background-color: #0a7a40; text-align: center;"><b>FINAL VERSION DUE</b></td>
+                <!-- <td style="background-color: #0a7a40; text-align: center;"><b>SCORE</b></td> -->
+            </tr>
+            </thead>
             <tbody>
             {% for k,v in output %}
                 <tr>
-                    <td style="background-color: #abcff5;"><b>{{ k + 1 }}</b></td>
+                    <td  style="background-color: #068ca6; text-align: center;"><b>{{ k + 1 }}</b></td>
                     {% for values in v %}
                         <td style="text-align: center;">{{ values }}</td>
                     {%  endfor %}
