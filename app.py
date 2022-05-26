@@ -38,9 +38,17 @@ def compute_tfidf(tf_bow, idfs):
     tfidf = {}
 
     for word, val in tf_bow.items():
-        tfidf = val * idfs[word]
+        tfidf[word] = val * idfs[word]
 
-    return tfidf
+    score = 0
+    no = 0
+    for word, value in tfidf.items():
+        score += value
+        no += 1
+
+    score = score / no
+
+    return score
 
 
 @app.route('/')
@@ -121,17 +129,6 @@ def computer_science():
         c8[i], c8[max_score] = c8[max_score], c8[i]
         c9[i], c9[max_score] = c9[max_score], c9[i]
 
-    for i in range(len(c0)):
-        if c9[i] == '':
-            del c1[i]
-            del c2[i]
-            del c3[i]
-            del c4[i]
-            del c5[i]
-            del c6[i]
-            del c7[i]
-            del c8[i]
-            del c9[i]
 
     # put data in a dictionary and return data to a template
 
@@ -219,17 +216,6 @@ def machine_learning():
         c8[i], c8[max_score] = c8[max_score], c8[i]
         c9[i], c9[max_score] = c9[max_score], c9[i]
 
-    for i in range(len(c0)):
-        if c9[i] == '':
-            del c1[i]
-            del c2[i]
-            del c3[i]
-            del c4[i]
-            del c5[i]
-            del c6[i]
-            del c7[i]
-            del c8[i]
-            del c9[i]
 
     # put data in a dictionary and return data to a template
 
