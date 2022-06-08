@@ -60,5 +60,19 @@
         and it is sorted by matching the categories and the abstract  <br>
         of a conference or a journal.
     </h1>
+
+    <div class="content-container">
+        <form action="{{ url_for('result') }}" method="post">
+            <h2>Input your abstract:</h2>
+            <input type="text" class="name-input name mb-3" id="abstract" name="abstract">
+            <br>
+            <input type="radio" name="options" id="option1" value="option1" checked> Computer Science </input<br>
+            <br>
+            <input type="radio" name="options" id="option2" value="option2"> Machine Learning </input<br>
+            <br>
+            <input class="btn btn-outline-primary" type="submit" value="Submit">
+        </form>
+    </div>
+
 </body>
 </html>
