@@ -1,31 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        body {
+            width: 98%;
+            margin: auto;
+            padding: 0;
+            font-size: 20px;
+            background-image:url("/static/photo1.jpg");
+            background-repeat: no-repeat;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        #tabelprint td {
+            background-color: #d6d0ce ;
+            border: 1px solid black;
+            font-family: 'Times New Roman', Times, serif;
+            width: auto;
+        }
+
+        table, th, td {
+            border: 1px solid;
+        }
+
+        table {
+            width: 100%;
+            max-width: 1550px;
+            height: 750px;
+            margin: 0 auto;
+            display: block;
+            overflow-x: auto;
+            border-spacing: 0;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #4f4f4f;
+            border-radius: 25px;
+            width: 461px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .topnav a.active {
+            background-color: #919191;
+            color: white;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        table::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        table::-webkit-scrollbar-track {
+            background: #b7b7b7;        /* color of the tracking area */
+        }
+
+        table::-webkit-scrollbar-thumb {
+            background-color: #504f4f;    /* color of the scroll thumb */
+            border-radius: 20px;       /* roundness of the scroll thumb */
+            border: 3px solid #757171;  /* creates padding around scroll thumb */
+        }
+    </style>
     <meta charset="UTF-8">
     <title>Results</title>
 </head>
 <body>
-  <table>
+    <div class="topnav">
+        <a href="http://127.0.0.1:5000/">Home Page</a>
+        <a href="http://127.0.0.1:5000/ComputerScience">Computer Science</a>
+        <a href="http://127.0.0.1:5000/MachineLearning">Machine Learning</a>
+    </div>
+
+    <h3 style="text-align: center; color: #b7b7b7;">
+        Here are the result based on the input abstract and the selected category
+    </h3>
+
+    <div id="tabelprint">
+        <table>
             <thead>
             <tr>
-                <td style="background-color: #50c081; text-align: center;"><b>no.</b></td>
-                <td style="background-color: #0a7a40; text-align: center;"><b>SCORE</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>TITLE</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>CATEGORIES</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>ABSTRACT</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>LINK</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>WHEN</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>WHERE</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>SUBMISSION DEADLINE</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>NOTIFICATION DUE</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>FINAL VERSION DUE</b></td>
-
+                <td style="background-color: #757171; text-align: center;"><b>no.</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>SCORE</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>TITLE</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>CATEGORIES</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>ABSTRACT</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>LINK</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>WHEN</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>WHERE</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>SUBMISSION DEADLINE</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>NOTIFICATION DUE</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>FINAL VERSION DUE</b></td>
+                <!-- <td style="background-color: #0a7a40; text-align: center;"><b>SCORE</b></td> -->
             </tr>
             </thead>
             <tbody>
             {% for k,v in output %}
                 <tr>
-                    <td  style="background-color: #068ca6; text-align: center;"><b>{{ k + 1 }}</b></td>
+                    <td  style="background-color: #757171; text-align: center;"><b>{{ k + 1 }}</b></td>
                     {% for values in v %}
                         <td style="text-align: center;">{{ values }}</td>
                     {%  endfor %}
@@ -33,5 +122,7 @@
             {% endfor %}
             </tbody>
         </table>
+    </div>
+    <br>
 </body>
 </html>

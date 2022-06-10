@@ -70,10 +70,10 @@ def result():
 
     if option[0] == 'option1':
         cur.execute('SELECT * FROM ComputerScience')
-        print(option)
+        print(option[0])
     elif option[0] == 'option2':
         cur.execute('SELECT * FROM MachineLearning')
-        print(option)
+        print(option[0])
 
     c0 = []
     c1 = []

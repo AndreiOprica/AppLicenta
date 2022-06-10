@@ -35,7 +35,7 @@
 
         .topnav {
             overflow: hidden;
-            background-color: #0a6ac5;
+            background-color: #4f4f4f;
             border-radius: 25px;
             width: 461px;
             text-align: center;
@@ -52,12 +52,12 @@
         }
 
         .topnav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #000000;
+            color: #ffffff;
         }
 
         .topnav a.active {
-            background-color: #40b290;
+            background-color: #919191;
             color: white;
         }
 
@@ -70,13 +70,13 @@
         }
 
         table::-webkit-scrollbar-track {
-            background: #fa9090;        /* color of the tracking area */
+            background: #b7b7b7;        /* color of the tracking area */
         }
 
         table::-webkit-scrollbar-thumb {
-            background-color: #1fb6d2;    /* color of the scroll thumb */
+            background-color: #504f4f;    /* color of the scroll thumb */
             border-radius: 20px;       /* roundness of the scroll thumb */
-            border: 3px solid #e77979;  /* creates padding around scroll thumb */
+            border: 3px solid #757171;  /* creates padding around scroll thumb */
         }
     </style>
     <meta charset="UTF-8">
@@ -95,23 +95,23 @@
         <table>
             <thead>
             <tr>
-                <td style="background-color: #50c081; text-align: center;"><b>no.</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>TITLE</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>CATEGORIES</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>ABSTRACT</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>LINK</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>WHEN</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>WHERE</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>SUBMISSION DEADLINE</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>NOTIFICATION DUE</b></td>
-                <td style="background-color: #50c081; text-align: center;"><b>FINAL VERSION DUE</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>no.</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>TITLE</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>CATEGORIES</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>ABSTRACT</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>LINK</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>WHEN</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>WHERE</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>SUBMISSION DEADLINE</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>NOTIFICATION DUE</b></td>
+                <td style="background-color: #757171; text-align: center;"><b>FINAL VERSION DUE</b></td>
                 <!-- <td style="background-color: #0a7a40; text-align: center;"><b>SCORE</b></td> -->
             </tr>
             </thead>
             <tbody>
             {% for k,v in output %}
                 <tr>
-                    <td  style="background-color: #068ca6; text-align: center;"><b>{{ k + 1 }}</b></td>
+                    <td  style="background-color: #757171; text-align: center;"><b>{{ k + 1 }}</b></td>
                     {% for values in v %}
                         <td style="text-align: center;">{{ values }}</td>
                     {%  endfor %}

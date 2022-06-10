@@ -14,7 +14,7 @@
 
         .topnav {
             overflow: hidden;
-            background-color: #0a6ac5;
+            background-color: #4f4f4f;
             border-radius: 25px;
             width: 461px;
             text-align: center;
@@ -31,14 +31,26 @@
         }
 
         .topnav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #000000;
+            color: #ffffff;
         }
 
         .topnav a.active {
-            background-color: #40b290;
+            background-color: #919191;
             color: white;
         }
+
+        #textarea {
+        width: 50%;
+        height: 60px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 20px;
+        resize: vertical;
+}
     </style>
     <meta charset="UTF-8">
     <title>Conferences and Journals Suggester</title>
@@ -53,24 +65,27 @@
     <br>
     <br>
     <br>
-    <h1 style="text-align: center; color: #1ad097;">
+    <h1 style="text-align: center; color: #b7b7b7;">
         The purpose of this website is to help people from academic environment <br>
         with specialization in computer science and machine learning to find <br>
         conferences and journal in an easier way. The data is from <a href="http://www.wikicfp.com/cfp/"> WikiCFP</a>  <br>
         and it is sorted by matching the categories and the abstract  <br>
         of a conference or a journal.
     </h1>
-
+    <br>
+    <br>
     <div class="content-container">
-        <form action="{{ url_for('result') }}" method="post">
+        <form style="text-align: center; color: #b7b7b7;" action="{{ url_for('result') }}" method="post">
             <h2>Input your abstract:</h2>
-            <input type="text" class="name-input name mb-3" id="abstract" name="abstract">
+            <input id="textarea" type="text" class="name-input name mb-3" id="abstract" name="abstract">
             <br>
-            <input type="radio" name="options" id="option1" value="option1" checked> Computer Science </input<br>
             <br>
-            <input type="radio" name="options" id="option2" value="option2"> Machine Learning </input<br>
+            <input type="radio" name="options" id="option1" value="option1" checked> Computer Science <br>
             <br>
-            <input class="btn btn-outline-primary" type="submit" value="Submit">
+            <input type="radio" name="options" id="option2" value="option2"> Machine Learning<br>
+            <br>
+            <br>
+            <input style="border-radius: 25px; width: 100px; height: 50px; font-size: 18px" class="btn btn-outline-primary" type="submit" value="Submit">
         </form>
     </div>
 
