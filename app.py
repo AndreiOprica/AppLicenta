@@ -144,8 +144,10 @@ def result():
 
     # put data in a dictionary and return data to a template
     output = {}
-
-    for i in range(len(c1)):
+    lenght = 10
+    if len(c1) < lenght:
+        lenght = len(c1)
+    for i in range(lenght):
         lst = [c0[i], c1[i], c8[i], c9[i], c2[i], c3[i], c4[i], c5[i], c6[i], c7[i]]
         output[i] = copy.copy(lst)
 
