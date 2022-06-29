@@ -75,6 +75,7 @@ def result():
         cur.execute('SELECT * FROM MachineLearning')
         print(option[0])
 
+    # in those list will be saved the columns of the table.
     c0 = []
     c1 = []
     c2 = []
@@ -86,15 +87,26 @@ def result():
     c8 = []
     c9 = []
 
+    # Here I save data of all columns in list
+    # A row is actually a column in the table
     for row in cur:
+        # row[0] have all the titles
         c1.append(row[0])
+        # row[1] have all the links
         c2.append(row[1])
+        # row[3] have all the data about when the conference will happen
         c3.append(row[3])
+        # row[5] have all the data about where the conference will happen
         c4.append(row[5])
+        # row[7] have all the data about when is the submission deadline of the conference
         c5.append(row[7])
+        # row[9] have all the data about when is the notification due of the conference
         c6.append(row[9])
+        # row[11] have all the data about when is the final version due of the conference
         c7.append(row[11])
+        # row[12] have all the categories
         c8.append(row[12])
+        # row[14] have all the abstracts
         c9.append(row[14])
 
     # calculate score and add it to lists
@@ -124,22 +136,24 @@ def result():
 
         c0.append((tfidf_bow_category + tfidf_bow_description))
 
+    # I use this manual function, because I need the indexes to remain the same.
+    # Otherwise, the data will be corrupted.
     for i in range(len(c0)):
-        max_score = i
+        index_max_score = i
         for j in range(i+1, len(c0)):
-            if c0[max_score] < c0[j]:
-                max_score = j
+            if c0[index_max_score] < c0[j]:
+                index_max_score = j
 
-        c0[i], c0[max_score] = c0[max_score], c0[i]
-        c1[i], c1[max_score] = c1[max_score], c1[i]
-        c2[i], c2[max_score] = c2[max_score], c2[i]
-        c3[i], c3[max_score] = c3[max_score], c3[i]
-        c4[i], c4[max_score] = c4[max_score], c4[i]
-        c5[i], c5[max_score] = c5[max_score], c5[i]
-        c6[i], c6[max_score] = c6[max_score], c6[i]
-        c7[i], c7[max_score] = c7[max_score], c7[i]
-        c8[i], c8[max_score] = c8[max_score], c8[i]
-        c9[i], c9[max_score] = c9[max_score], c9[i]
+        c0[i], c0[index_max_score] = c0[index_max_score], c0[i]
+        c1[i], c1[index_max_score] = c1[index_max_score], c1[i]
+        c2[i], c2[index_max_score] = c2[index_max_score], c2[i]
+        c3[i], c3[index_max_score] = c3[index_max_score], c3[i]
+        c4[i], c4[index_max_score] = c4[index_max_score], c4[i]
+        c5[i], c5[index_max_score] = c5[index_max_score], c5[i]
+        c6[i], c6[index_max_score] = c6[index_max_score], c6[i]
+        c7[i], c7[index_max_score] = c7[index_max_score], c7[i]
+        c8[i], c8[index_max_score] = c8[index_max_score], c8[i]
+        c9[i], c9[index_max_score] = c9[index_max_score], c9[i]
 
 
     # put data in a dictionary and return data to a template
@@ -155,6 +169,7 @@ def result():
 
 
 @app.route('/ComputerScience')
+# this endpoint give opportunity to the user to search in the table with all information about this category.
 def computer_science():
 
     # connect to database, extract data and put data in lists
@@ -162,6 +177,7 @@ def computer_science():
     cur = conn.cursor()
     cur.execute('SELECT * FROM ComputerScience')
 
+    # in those list will be saved the columns of the table.
     c0 = []
     c1 = []
     c2 = []
@@ -173,16 +189,28 @@ def computer_science():
     c8 = []
     c9 = []
 
+    # Here I save data of all columns in list
+    # A row is actually a column in the table
     for row in cur:
+        # row[0] have all the titles
         c1.append(row[0])
+        # row[1] have all the links
         c2.append(row[1])
+        # row[3] have all the data about when the conference will happen
         c3.append(row[3])
+        # row[5] have all the data about where the conference will happen
         c4.append(row[5])
+        # row[7] have all the data about when is the submission deadline of the conference
         c5.append(row[7])
+        # row[9] have all the data about when is the notification due of the conference
         c6.append(row[9])
+        # row[11] have all the data about when is the final version due of the conference
         c7.append(row[11])
+        # row[12] have all the categories
         c8.append(row[12])
+        # row[14] have all the abstracts
         c9.append(row[14])
+
 
     # calculate score and add it to lists
     for i in range(len(c8)):
@@ -210,22 +238,24 @@ def computer_science():
 
         c0.append((tfidf_bow_category + tfidf_bow_description))
 
+    # I use this manual function, because I need the indexes to remain the same.
+    # Otherwise, the data will be corrupted.
     for i in range(len(c0)):
-        max_score = i
+        index_max_score = i
         for j in range(i+1, len(c0)):
-            if c0[max_score] < c0[j]:
-                max_score = j
+            if c0[index_max_score] < c0[j]:
+                index_max_score = j
 
-        c0[i], c0[max_score] = c0[max_score], c0[i]
-        c1[i], c1[max_score] = c1[max_score], c1[i]
-        c2[i], c2[max_score] = c2[max_score], c2[i]
-        c3[i], c3[max_score] = c3[max_score], c3[i]
-        c4[i], c4[max_score] = c4[max_score], c4[i]
-        c5[i], c5[max_score] = c5[max_score], c5[i]
-        c6[i], c6[max_score] = c6[max_score], c6[i]
-        c7[i], c7[max_score] = c7[max_score], c7[i]
-        c8[i], c8[max_score] = c8[max_score], c8[i]
-        c9[i], c9[max_score] = c9[max_score], c9[i]
+        c0[i], c0[index_max_score] = c0[index_max_score], c0[i]
+        c1[i], c1[index_max_score] = c1[index_max_score], c1[i]
+        c2[i], c2[index_max_score] = c2[index_max_score], c2[i]
+        c3[i], c3[index_max_score] = c3[index_max_score], c3[i]
+        c4[i], c4[index_max_score] = c4[index_max_score], c4[i]
+        c5[i], c5[index_max_score] = c5[index_max_score], c5[i]
+        c6[i], c6[index_max_score] = c6[index_max_score], c6[i]
+        c7[i], c7[index_max_score] = c7[index_max_score], c7[i]
+        c8[i], c8[index_max_score] = c8[index_max_score], c8[i]
+        c9[i], c9[index_max_score] = c9[index_max_score], c9[i]
 
 
     # put data in a dictionary and return data to a template
@@ -241,6 +271,7 @@ def computer_science():
 
 
 @app.route('/MachineLearning')
+# this endpoint give opportunity to the user to search in the table with all information about this category.
 def machine_learning():
 
     # connect to database, extract data and put data in lists
@@ -248,6 +279,7 @@ def machine_learning():
     cur = conn.cursor()
     cur.execute('SELECT * FROM MachineLearning')
 
+    # in those list will be saved the columns of the table.
     c0 = []
     c1 = []
     c2 = []
@@ -259,15 +291,26 @@ def machine_learning():
     c8 = []
     c9 = []
 
+    # Here I save data of all columns in list
+    # A row is actually a column in the table
     for row in cur:
+        # row[0] have all the titles
         c1.append(row[0])
+        # row[1] have all the links
         c2.append(row[1])
+        # row[3] have all the data about when the conference will happen
         c3.append(row[3])
+        # row[5] have all the data about where the conference will happen
         c4.append(row[5])
+        # row[7] have all the data about when is the submission deadline of the conference
         c5.append(row[7])
+        # row[9] have all the data about when is the notification due of the conference
         c6.append(row[9])
+        # row[11] have all the data about when is the final version due of the conference
         c7.append(row[11])
+        # row[12] have all the categories
         c8.append(row[12])
+        # row[14] have all the abstracts
         c9.append(row[14])
 
     # calculate score and add it to lists
@@ -296,22 +339,24 @@ def machine_learning():
 
         c0.append((tfidf_bow_category + tfidf_bow_description))
 
+    # I use this manual function, because I need the indexes to remain the same.
+    # Otherwise, the data will be corrupted.
     for i in range(len(c0)):
-        max_score = i
+        index_max_score = i
         for j in range(i+1, len(c0)):
-            if c0[max_score] < c0[j]:
-                max_score = j
+            if c0[index_max_score] < c0[j]:
+                index_max_score = j
 
-        c0[i], c0[max_score] = c0[max_score], c0[i]
-        c1[i], c1[max_score] = c1[max_score], c1[i]
-        c2[i], c2[max_score] = c2[max_score], c2[i]
-        c3[i], c3[max_score] = c3[max_score], c3[i]
-        c4[i], c4[max_score] = c4[max_score], c4[i]
-        c5[i], c5[max_score] = c5[max_score], c5[i]
-        c6[i], c6[max_score] = c6[max_score], c6[i]
-        c7[i], c7[max_score] = c7[max_score], c7[i]
-        c8[i], c8[max_score] = c8[max_score], c8[i]
-        c9[i], c9[max_score] = c9[max_score], c9[i]
+        c0[i], c0[index_max_score] = c0[index_max_score], c0[i]
+        c1[i], c1[index_max_score] = c1[index_max_score], c1[i]
+        c2[i], c2[index_max_score] = c2[index_max_score], c2[i]
+        c3[i], c3[index_max_score] = c3[index_max_score], c3[i]
+        c4[i], c4[index_max_score] = c4[index_max_score], c4[i]
+        c5[i], c5[index_max_score] = c5[index_max_score], c5[i]
+        c6[i], c6[index_max_score] = c6[index_max_score], c6[i]
+        c7[i], c7[index_max_score] = c7[index_max_score], c7[i]
+        c8[i], c8[index_max_score] = c8[index_max_score], c8[i]
+        c9[i], c9[index_max_score] = c9[index_max_score], c9[i]
 
 
     # put data in a dictionary and return data to a template
